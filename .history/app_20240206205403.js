@@ -1,0 +1,17 @@
+const express = require('express')
+
+const app = express()
+app.use(express.json())
+
+
+const port_number = 3008
+app.listen,  function(){
+    console.log(The api service is running on port ${port_number})
+})
+
+// routes
+app.use('/doctors', function(request, response){
+  response.send({
+    "doctors": ["Julius", "John"]
+  })
+})
