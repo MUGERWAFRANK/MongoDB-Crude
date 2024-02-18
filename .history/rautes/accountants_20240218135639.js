@@ -1,0 +1,27 @@
+const express = require('express')
+const router = express.Router()
+const data = require('../')
+
+router.get("/", function(req,res){
+    res.send({
+        data.accountants
+    })
+})
+
+router.post("/create", function(req,res){
+    const payload = req.body
+    console.log(`payload`, payload)
+    res.send('accountant information posted successfully!')
+})
+
+router.put('/:id', function(req,res){
+    const accountant = req.params.id
+    console.log(`accountant`, accountant)
+    const payload = req.body
+    console.log(`data`, payload)
+    res.send(`You have sent massage of the id ${accountant}`) 
+    
+
+})
+
+module.exports = router
